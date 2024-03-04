@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dish.Pages.DishPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Favoriet gerecht" />
+            <Entry Text="{Binding DishName}"></Entry>
+            <Label Text="Aantal keer gegeten"></Label>
+            <Entry Text="{Binding TimesEaten}" Keyboard="Numeric"></Entry>
+            <Button Text="Save" Command="{Binding SaveCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
