@@ -24,7 +24,10 @@ namespace Dish.ViewModels
         public string DishName
         {
             get { return dishName; }
-            set { dishName = value; RaisePropertyChanged(nameof(DishName)); }
+            set { 
+                dishName = value; 
+                RaisePropertyChanged(nameof(DishName)); 
+            }
         }
 
         public ICommand SaveCommand

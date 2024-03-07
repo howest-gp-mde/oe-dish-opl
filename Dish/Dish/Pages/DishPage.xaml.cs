@@ -13,26 +13,12 @@ namespace Dish.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DishPage : ContentPage
     {
-        DishViewModel model;
         public DishPage()
         {
             InitializeComponent();
 
-            model = new DishViewModel();
-            //BindingContext = model;
+
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            // model.AppearingCommand.Execute(null);
-        }
-
-        private void Entry_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            model = this.BindingContext as DishViewModel;
-            model.AppearingCommand.Execute(null);
-        }
     }
 }

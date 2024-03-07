@@ -13,8 +13,8 @@ namespace Dish
         {
             InitializeComponent();
 
-            var page = FreshPageModelResolver.ResolvePageModel<DishViewModel>();
-            MainPage = new NavigationPage(new DishPage());
+            var page = FreshPageModelResolver.ResolvePageModel<DishViewModel>(null);
+            MainPage = new NavigationPage(page);
         }
 
         protected override void OnStart()

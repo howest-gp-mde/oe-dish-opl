@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout Padding="20">
             <Label Text="Favoriet gerecht"  />
-            <Entry Text="{Binding DishName}" TextChanged="Entry_TextChanged"></Entry>
+            <Entry Text="{Binding DishName}" ></Entry>
             <Label Text="Aantal keer gegeten"></Label>
             <Entry Text="{Binding TimesEaten}" Keyboard="Numeric"></Entry>
             <Button Text="Save" Command="{Binding SaveCommand}"/>
