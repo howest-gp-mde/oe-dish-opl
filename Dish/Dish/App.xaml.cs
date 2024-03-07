@@ -1,4 +1,6 @@
 ﻿using Dish.Pages;
+using Dish.ViewModels;
+using FreshMvvm;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,6 +13,7 @@ namespace Dish
         {
             InitializeComponent();
 
+            var page = FreshPageModelResolver.ResolvePageModel<DishViewModel>();
             MainPage = new NavigationPage(new DishPage());
         }
 

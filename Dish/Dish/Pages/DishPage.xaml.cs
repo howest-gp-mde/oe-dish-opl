@@ -19,13 +19,19 @@ namespace Dish.Pages
             InitializeComponent();
 
             model = new DishViewModel();
-            BindingContext = model;
+            //BindingContext = model;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
+            // model.AppearingCommand.Execute(null);
+        }
+
+        private void Entry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            model = this.BindingContext as DishViewModel;
             model.AppearingCommand.Execute(null);
         }
     }

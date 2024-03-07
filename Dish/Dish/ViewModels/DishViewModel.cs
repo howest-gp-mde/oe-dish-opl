@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FreshMvvm;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -7,9 +8,8 @@ using Xamarin.Forms;
 
 namespace Dish.ViewModels
 {
-    public class DishViewModel : INotifyPropertyChanged
+    public class DishViewModel : FreshBasePageModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
         private int timesEaten;
 
@@ -39,6 +39,13 @@ namespace Dish.ViewModels
             }
         }
 
+        public override void Init(object initData)
+        {
+            base.Init(initData);
+
+            AppearingCommand.Execute(null);
+        }
+
         public ICommand AppearingCommand
         {
             get
@@ -54,13 +61,6 @@ namespace Dish.ViewModels
                     
                 });
             }
-        }
-
-
-
-        private void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
